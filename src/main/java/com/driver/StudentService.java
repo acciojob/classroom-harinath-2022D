@@ -1,13 +1,17 @@
 package com.driver;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
+
 public class StudentService {
+
     private StudentRepository studentRepository = new StudentRepository();
 
     public void addStudent(Student student) {
         studentRepository.addStudent(student);
-        return;
     }
 
     public void addTeacher(Teacher teacher) {

@@ -1,9 +1,12 @@
 package com.driver;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 public class StudentRepository {
     private Map<String, Student> studentMap = new HashMap<>();
@@ -55,13 +58,14 @@ public class StudentRepository {
     }
 
     public void deleteAllTeachersAndStudents() {
-//        for(String teach : teacherMap.keySet()){
-//            deleteTeacher_Student(teach);
-//        }
+        for(String teach : teacher_student.keySet()){
+            List<String> list = teacher_student.get(teach);
+            for(String stude : list){
+                studentMap.remove(stude);
+            }
+        }
         teacherMap.clear();
-        //teacherMap = new HashMap<>();
-        studentMap = new HashMap<>();
-        teacher_student = new HashMap<>();
+        teacher_student.clear();
     }
 
 }

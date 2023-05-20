@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("students")
 public class StudentController {
 
-    private StudentService studentService = new StudentService();
+     private StudentService studentService = new StudentService();
 
 
     @PostMapping("/add-student")
